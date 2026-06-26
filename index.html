@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Myth or Maxxed? — Evidence-checking common looksmaxxing advice</title>
+<meta name="description" content="Three popular looksmaxxing claims, checked against the evidence. Myth, half-truth, or backed — tap to find out. Harm-reduction over hype." />
+<style>
+  :root {
+    --bg: #0f0f12;
+    --card: #18181d;
+    --card-hover: #1f1f26;
+    --text: #ececf0;
+    --muted: #9a9aa6;
+    --line: #2a2a32;
+    --myth: #ff5c5c;
+    --half: #ffb340;
+    --backed: #4ade80;
+    --accent: #6d8bff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    padding: 0 20px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 64px 0 96px; }
+  .kicker {
+    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 14px;
+  }
+  h1 { font-size: 38px; line-height: 1.15; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; }
+  .sub { color: var(--muted); font-size: 17px; max-width: 560px; margin-bottom: 48px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px 26px;
+    margin-bottom: 18px;
+    cursor: pointer;
+    transition: background .18s ease, transform .18s ease, border-color .18s ease;
+  }
+  .card:hover { background: var(--card-hover); transform: translateY(-2px); }
+  .claim { font-size: 19px; font-weight: 650; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .tap { font-size: 13px; color: var(--muted); white-space: nowrap; font-weight: 500; }
+  .reveal {
+    max-height: 0; overflow: hidden;
+    transition: max-height .35s ease, margin-top .35s ease, opacity .3s ease;
+    opacity: 0;
+  }
+  .card.open .reveal { max-height: 320px; margin-top: 18px; opacity: 1; }
+  .verdict {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 999px; margin-bottom: 12px;
+  }
+  .v-myth { background: rgba(255,92,92,.15); color: var(--myth); }
+  .v-half { background: rgba(255,179,64,.15); color: var(--half); }
+  .v-backed { background: rgba(74,222,128,.15); color: var(--backed); }
+  .explain { color: var(--muted); font-size: 15.5px; }
+  .explain strong { color: var(--text); font-weight: 600; }
+  footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="kicker">Myth or Maxxed?</div>
+    <h1>Three things men get told about their looks. One isn't true.</h1>
+    <p class="sub">Looksmaxxing advice spreads faster than it gets checked. Tap each claim to see whether the evidence backs it, complicates it, or kills it.</p>
+
+    <div class="card" data-card>
+      <div class="claim">
+        <span>"Drink tons of water and your skin will glow."</span>
+        <span class="tap">Tap to check &darr;</span>
+      </div>
+      <div class="reveal">
+        <span class="verdict v-half">Half-truth</span>
+        <p class="explain">Dehydration <strong>does</strong> make skin look duller and more sunken — so if you're actually under-drinking, fixing that helps. But once you're adequately hydrated, drinking <strong>more</strong> doesn't give extra "glow." Skin moisture is mostly controlled by your barrier and environment, not how many litres you pour in. Drink to thirst; don't expect a litre to replace moisturiser.</p>
+      </div>
+    </div>
+
+    <div class="card" data-card>
+      <div class="claim">
+        <span>"Shaving your beard makes it grow back thicker."</span>
+        <span class="tap">Tap to check &darr;</span>
+      </div>
+      <div class="reveal">
+        <span class="verdict v-myth">Myth</span>
+        <p class="explain">This one's been tested and it's <strong>false</strong>. Shaving cuts the hair at the surface — it doesn't touch the follicle, which is what determines thickness and growth rate. Regrowth feels coarser only because the cut leaves a blunt tip instead of a tapered one. It looks darker against the skin, but the hair itself is unchanged.</p>
+      </div>
+    </div>
+
+    <div class="card" data-card>
+      <div class="claim">
+        <span>"Sleeping earlier actually changes how your face looks."</span>
+        <span class="tap">Tap to check &darr;</span>
+      </div>
+      <div class="reveal">
+        <span class="verdict v-backed">Backed by evidence</span>
+        <p class="explain">This one holds up. Poor sleep is linked to <strong>more visible under-eye darkness, puffiness, paler skin and drooping corners of the mouth</strong> — people literally rate sleep-deprived faces as more tired and less healthy. It also raises cortisol, which works against skin repair. Not vanity: it's one of the few free, repeatable inputs that genuinely moves the needle.</p>
+      </div>
+    </div>
+
+    <footer>
+      Built as a small demo of <em>looksmaxxing.guide</em>'s editorial stance: separate evidence from hype instead of repeating either. Verdicts reflect general dermatological/sleep-research consensus, not individual medical advice.
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('[data-card]').forEach(function (card) {
+      card.addEventListener('click', function () {
+        card.classList.toggle('open');
+        var tap = card.querySelector('.tap');
+        tap.textContent = card.classList.contains('open') ? 'Tap to close \u2191' : 'Tap to check \u2193';
+      });
+    });
+  </script>
+</body>
+</html>
